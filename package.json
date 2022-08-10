@@ -1,8 +1,8 @@
 {
-  "name": "krowdybootcamp",
+  "name": "scrapping",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Shadowrunner11 <matematicadivina1@gmail.com>",
+  "author": "Alespitale <alespitale6@gmail.com>",
   "type": "module",
   "license": "MIT",
   "scripts": {

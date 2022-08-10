@@ -1,23 +1,43 @@
-class Profile {
-  constructor(name, educations, experiences, contactInfo){
-    this.name = name
-    this.educations = educations
-    this.experiences = experiences
-    this.contactInfo = contactInfo
-  }
-}
+import schema from 'schm';
 
-class Education extends InfoItem{
-  constructor(title, institution, startDate, endDate){
-    super(title, institution, startDate, endDate)
-  }
-}
+const profileSchema = schema({
+  name       : String,
+  educations : [educationSchema],
+  experience : [experienceSchema],
+  contactInfo: contactInfoSchema,
+});
 
-class Experience extends InfoItem{
-  constructor(title, institution, startDate, endDate){
-    super(title, institution, startDate, endDate)
-  }
-}
+const contactInfoSchema = schema({
+  $type                    : String,
+  address                  : String,
+  birthDateOn              : String,
+  birthdayVisibilitySetting: Boolean,
+  connectedAt              : Date,
+  emailAddress             : String,
+  entityUrn                : String,
+  ims                      : String,
+  interests                : [String],
+  phoneNumbers             : [String],
+  primaryTwitterHandle     : String,
+  sesameCreditGradeInfo    : String,
+  twitterHandles           : [String],
+  weChatContactInfo        : String,
+  websites                 : [String]
+});
 
-export default Profile
+const educationSchema = schema({
+  title      : String,
+  institution: String,
+  startDate  : Date,
+  endDate    : Date
+});
+
+const experienceSchema = schema({
+  title     : String,
+  enterprise: String,
+  startDate : Date,
+  endDate   : Date
+});
+
+export default profileSchema;
 
