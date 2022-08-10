@@ -18,10 +18,7 @@ async function getContacInfo() {
 
     const [contactInfoName] =
       $(profileSelectors.contactInfo).href.match(/in\/.+\/o/g) ?? [];
-    const contactInfoURL = `https://www.linkedin.com/voyager/api/identity/profiles${contactInfoName.slice(
-      2,
-      -2
-    )}/profileContactInfo`;
+    const contactInfoURL = `https://www.linkedin.com/voyager/api/identity/profiles${contactInfoName.slice(2,-2)}/profileContactInfo`;
 
     const {
       data: { data },
